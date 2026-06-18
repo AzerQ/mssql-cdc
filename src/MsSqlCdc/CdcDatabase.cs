@@ -146,12 +146,11 @@ internal static class CdcDatabase
             endLsn,
             filterOption).ConfigureAwait(false);
     }
-    private const string SqlObjectNamePartSeparator = ".";
-    private static string EscapeSqlServerObjectName(string objectName)
+    private static string EscapeSqlServerObjectName(string objectName, string sqlObjectNamePartSeparator = ".")
     {
         return string
-        .Join(SqlObjectNamePartSeparator, objectName
-        .Split(SqlObjectNamePartSeparator)
+        .Join(sqlObjectNamePartSeparator, objectName
+        .Split(sqlObjectNamePartSeparator)
         .Select(namePart => $"[{namePart}]"));
     }
 
