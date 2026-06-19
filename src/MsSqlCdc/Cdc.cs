@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
-
+#pragma warning disable IDE0305
 namespace MsSqlCdc;
 
 /// <summary>
